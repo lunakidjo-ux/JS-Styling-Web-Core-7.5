@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #1B1C21;
+  background-color: #f8f8f8;
+
+}
+
+h1 {
+height: 24;
+opacity: 0.5;   
+padding-left: 32px;
+padding-top: 30px;
+font-size: 13px;
+background: linear-gradient(#f8f8f8, #ffffff);
+}
+
+.brands-block {
+    padding: 24px 32px;
+}
+
+.container {  
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(240px,1fr));  
+padding-left: 32px;
+padding-top: 30px;
+gap: 10px;
+width: 224px;
+height: 72px;
+transition: max-height 0.3s ease;
+}
+
+.container.expanded {
+    max-height: 2000px;
+}
+
+button {
+    background-color: white;
+    border: 1px solid #EAEAEA;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px
+   
+}
+
+.brand {
+
+    height: 25px;
+    margin: 6px;
+}
+
+.go {
+    height: 20px;
+    margin: 6px;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+.toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.arrow {
+    transition: transform 0.3s;
+}
+
+.arrow.rotated {
+    transform: rotate(180deg);
+}
+
+.brands-swiper {
+    display: none;
+}
+
+@media (max-width: 320px) {
+    .container {
+        display: none;
+    }
+    
+    .brands-swiper {
+        display: block;
+    }
+
+    .toggle {
+        display: none;
+    }
+}
+
