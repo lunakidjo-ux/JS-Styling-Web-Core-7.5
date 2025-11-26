@@ -10,6 +10,8 @@ toggle.addEventListener("click", () => {
   if (expanded) {
     text.textContent = "Hide";
     arrow.classList.add("rotated");
+    
+
   } else {
     text.textContent = "Show all";
     arrow.classList.remove("rotated");
@@ -18,7 +20,7 @@ toggle.addEventListener("click", () => {
 
 
 // --- MOBILE SWIPER ---
-if (window.innerWidth <= 320) {
+if (window.innerWidth >=320 && window.innerWidth <=768) {
   new Swiper(".brands-swiper", {
     slidesPerView: 1.2,
     spaceBetween: 16,
@@ -28,3 +30,4 @@ if (window.innerWidth <= 320) {
     },
   });
 }
+
