@@ -23,7 +23,7 @@ h1 {
   padding: 24px 32px;
 }
 
-.brands-grid {
+.container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   padding-left: 32px;
@@ -34,7 +34,7 @@ h1 {
   transition: max-height 0.3s ease;
 }
 
-.brands-grid.expanded {
+.container.expanded {
   max-height: 2000px;
 }
 
@@ -49,7 +49,7 @@ button {
   justify-content: space-between;
   align-items: center;
   padding: 8px;
-  object-fit: contain; /* added */ /*!!*/
+  object-fit: contain; /* added */
 }
 
 .brand {
@@ -65,12 +65,13 @@ button {
 }
 
 .toggle {
-  display: flex;
+  display: none;
+  /* display: flex;
   align-items: center;
   gap: 8px;
   margin-top: 16px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 14px; */
 }
 
 .arrow {
@@ -110,7 +111,6 @@ button {
   max-width: 320px;
   height: 300px; /* adjust height as needed */
   margin: 0 auto;
-  ;
 }
 
 /* Slide styling */
@@ -133,6 +133,9 @@ button {
     display: none;
   }
 
+  .brands-block {
+    max-width: 1050px;
+  }
   .brands-grid {
     display: flex;
     flex-wrap: wrap; /* allows items to move to next row */
@@ -141,6 +144,22 @@ button {
 
   .brands-grid button {
     width: calc((100% - 2 * 10px) / 3); /* 3 columns with gap */
+  }
+
+  .toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  .collapsed-tablet {
+    display: none;
+  }
+  .brands-grid.expanded .collapsed-tablet {
+    display: flex;
   }
 }
 
@@ -159,6 +178,22 @@ button {
   .brands-grid button {
     width: calc((100% - 3 * 10px) / 4); /* 4 columns with gap */
   }
+
+  .toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  .collapsed-tablet {
+    display: none;
+  }
+  .collapsed-pc {
+    display: flex;
+  }
+  .brands-grid.expanded .collapsed-pc {
+    display: none;
+  }
 }
-
-
